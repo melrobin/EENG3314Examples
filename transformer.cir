@@ -1,0 +1,17 @@
+    .TITLE Example transformer
+    VIN 2 0 SIN(0 170 60 0 0)
+    * This defines a sinusoid of 170 V amplitude and 60 Hz. 
+    RS 2 1 10
+    L1 1 0 2000
+    L2 3 0 20
+    K L1 L2 0.99999
+    RL 3 0 500
+    .CONTROL
+    .TRAN 0.2M 25M
+SET COLOR0=WHITE
+SET COLOR1=BLACK
+    .PROBE V(2,3)
+    .PLOT TRAN  V(2)
+    .PLOT TRAN V(3)
+    .ENDC
+    .END 

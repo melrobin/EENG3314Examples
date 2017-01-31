@@ -1,0 +1,6 @@
+* This is an example circuit that hopefully works ???
+V1 1 0 AC 10
+R1 1 2 2
+L1 2 3 10m
+C1 3 0 4U
+

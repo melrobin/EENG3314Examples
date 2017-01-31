@@ -1,0 +1,11 @@
+* Circuit illustrating inverting amplifier
+.SUBCKT OpAmp p_in n_in com out
+Ex int com p_in n_in 1e5
+RI p_in n_in 500k
+Ro int out 50.0
+.ENDS
+Vg 1 0 DC 50mV
+Rg 1 2 5k
+Rf 2 3 50k
+RL 3 0 20k
+X1 0 2 0 3 OpAmp

@@ -1,0 +1,13 @@
+*RC Circuit
+vin 1 0 1.0
+r1 1 2 1K
+c1 2 3 1uF
+vdummy 3 0 DC 0V
+.ic V(1)=0 V(2)=0
+.control
+tran .001s .005s
+plot V(2,3)
+*.probe i(c1)
+.endc
+.end
+
