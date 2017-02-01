@@ -1,0 +1,15 @@
+* This tests out our 10KhZ cutoff design 
+
+VS 1 0 AC 5V
+RS 1 2 1k
+C1 2 0 .7654e-7
+L1 2 3 .18478
+C2 3 0 1.8478e-7
+L2 3 4 .07654
+RL 4 0 1k
+.CONTROL
+AC DEC 100 10 100k
+ PLOT db(V(3)/V(1))
+.ENDC
+.END
+

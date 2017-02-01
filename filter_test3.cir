@@ -1,0 +1,15 @@
+* This tests out our 10KhZ cutoff design 5th Order (???)
+VS 1 0 AC 5V
+RS 1 2 1k
+C1 2 0 .618e-7
+L1 2 3 .1618
+C2 3 0 2e-7
+L2 3 4 .1618
+C3 4 0 .618e-7
+RL 4 0 1k
+.CONTROL
+AC DEC 100 10 100k
+ PLOT db(V(3)/V(1))
+.ENDC
+.END
+
