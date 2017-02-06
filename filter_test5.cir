@@ -1,0 +1,12 @@
+*Butterworth BPF via LPF
+Vs 1 0 AC 5
+Rs 1 2 50k
+C1 2 0 .24nF
+Lp1 2 0 5.09e-4
+L1 2 3 1.47
+Cs1 3 4 .166p
+C2 4 0 .55nF
+Lp2 4 0 2.23e-4
+L2 4 5 .61
+Cs2 5 6 .201p
+RL 6 0 50K
