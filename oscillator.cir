@@ -1,0 +1,40 @@
+*Including the predefined op-amp subcircuit file
+.include ua741.txt
+*Connections as mentioned in subcircuit file
+C1 1 2 1p
+R1 2 0 1.6244e+05 
+C2 2 3 1p
+R2 3 0 1.6244e+05
+C3 3 4 1p
+R3 4 0 1.6244e+05
+Rf 4 1 4710760 
+Vcc 5 0 dc 15v
+Vee 6 0 dc -15v
+X1 0 4 5 6 1 UA741
+
+*r1 5 1 1k
+*c1 4 1 0.1u
+*rf 4 1 1Meg
+*vcc 2 0 dc 15v
+*vee 3 0 dc -15v
+*Giving a sinusoidal input
+*vin 5 0 sin (0 1v 1k 0 0)
+*vin 5 0 pulse(-1 1 2ns 2ns 2ns 1ms 3ms)
+.control
+tran 1ms 50ms
+run
+plot v(1)
+.endc
+.end
+
+   * To use a subcircuit, the name must begin with 'X'.  For example:
+   * X1 1 2 3 4 5 uA741
+   *
+   * connections:   non-inverting input
+   *                |  inverting input
+   *                |  |  positive power supply
+   *                |  |  |  negative power supply
+  *                |  |  |  |  output
+  *                |  |  |  |  |
+ * .subckt uA741    1  2  3  4  5
+
